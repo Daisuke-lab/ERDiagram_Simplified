@@ -1,0 +1,35 @@
+
+.ownerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+.ownerInfo {
+    display: flex;
+    align-items: center;
+}
+
+.ownerContainer:hover {
+    background-color: aliceblue
+}
+
+
+.buttonContainer {
+    margin-top: 20px;
+    width: 100%;
+    contain: content;
+}
+
+.smallSelect {
+    font-size: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.selectContainer legend {
+    width: 0
+}
