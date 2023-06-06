@@ -43,8 +43,8 @@ export default function TransitionsModal(props:Props) {
       >
         <Fade in={props.open}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              ログインする方法を選んでください。
+            <Typography id="transition-modal-title" variant="h6" component="h2" textAlign="center">
+              Please choose how to login
             </Typography>
             <Divider/>
             <div className={styles.buttonContainer}>

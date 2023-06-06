@@ -5,7 +5,8 @@
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: start;
+  height: 50px;
+  position: relative;
 }
 
 .iconImage {
@@ -13,10 +14,13 @@
 }
 
 .loginText {
-  flex: 1
+  position: absolute;
+  left: 110px;
+  font-size: 15px;
 }
 
 .loginIconContainer {
-  margin-left: 40px;
-  margin-top: 2px;
+  position: absolute;
+  left: 50px;
+  top: 3px;
 }
