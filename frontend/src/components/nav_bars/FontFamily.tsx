@@ -19,10 +19,10 @@ function FontFamily() {
 
 
     const handleClose = () => {
-      const menuItems = document.getElementsByClassName("font-mamily-item")
+      const menuItems = document.getElementsByClassName("font-mamily-item") as unknown as HTMLElement[]
       for (const menuItem of menuItems) {
         console.log(menuItem)
-        menuItem.setAttribute("disableMouseEnter", false)
+        menuItem.setAttribute("disableMouseEnter", "false")
       }
     }
 
@@ -31,9 +31,9 @@ function FontFamily() {
         console.log("handleChange")
         console.log(event)
         // handleMouseOver can be triggered even after handleChange, thus disable it by attribute.
-        const menuItems = document.getElementsByClassName("font-mamily-item")
+        const menuItems = document.getElementsByClassName("font-mamily-item") as unknown as HTMLElement[]
         for (const menuItem of menuItems) {
-          menuItem.setAttribute("disableMouseEnter", true)
+          menuItem.setAttribute("disableMouseEnter", "true")
           //menuItem.addEventListener("mouseenter", function() { return; })
         }
         const textarea = getTextarea()

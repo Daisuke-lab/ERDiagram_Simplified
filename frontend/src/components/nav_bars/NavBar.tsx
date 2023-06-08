@@ -26,7 +26,7 @@ function NavBar() {
   const canEdit = [CAN_EDIT, OWNER].includes(currentPermission)
   const initialTitle = currentRoom !== null && currentRoom?.title !== undefined?currentRoom?.title:"Untitled"
   const { data: session } = useSession()
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   const [shareOpen, setShareOpen] = useState<boolean>(false) 
   const onKeyDown = async (e:React.KeyboardEvent<HTMLInputElement>) => {
     const keyCode = e.keyCode;

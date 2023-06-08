@@ -32,7 +32,7 @@ function SimpleTextHtmlText(props:Props) {
     
     const scales = textareaStyle?.transform?.split(/\(|\)/) ??[]
     const session = state.users.session
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const currentSimpleText = state.simpleTexts.currentSimpleText
     const textareaRef = React.useRef<HTMLTextAreaElement>(null)
 

@@ -30,7 +30,7 @@ function ErDiagramTextHtmlText(props:Props) {
     const currentRoom = state.commons.currentRoom
     //const scales = text
     const session = state.users.session
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const textareaRef = React.useRef<HTMLTextAreaElement>(null)
     const onKeyDown = async (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
         const keyCode = e.keyCode;

@@ -33,7 +33,7 @@ function Anchor(props:Props) {
     const [destination, setDestination] = useState<ShapeConnectionType | null>(null)
     const roomId = state.commons.currentRoom?.id
     const session = state.users.session
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const [color, setColor] = useState<"black" | typeof mainTheme.secondary>("black")
     
     useEffect(() => {

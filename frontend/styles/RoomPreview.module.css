@@ -5,11 +5,11 @@
 }
 
 .imageContainer {
-    position: relative
+    position: relative;
 }
 
 .imageContainer button {
     position: absolute;
-    right: 6px
+    right: 6px;
 }
 

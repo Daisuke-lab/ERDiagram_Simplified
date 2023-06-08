@@ -45,7 +45,7 @@ function ShareForm(props:Props) {
   const {open, setOpen} = props
   const { enqueueSnackbar } = useSnackbar();
   const { data: session} = useSession()
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   const title = "Let's share!"
   const formModalProps = {title, open, setOpen}
   const [users, setUsers] = useState<UserType[]>([])

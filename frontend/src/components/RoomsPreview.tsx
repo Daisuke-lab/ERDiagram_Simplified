@@ -23,7 +23,7 @@ function RoomsPreview(props:Props) {
     const { data: session } = useSession()
     const rooms = useAppSelector(state => state.commons.rooms)
     const dispatch = useAppDispatch()
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const currentUser = useAppSelector(state => state.users.currentUser)
     const DUMMY_STARRED_ROOM_IDS = "fafearerearearea"
     useEffect(() => {

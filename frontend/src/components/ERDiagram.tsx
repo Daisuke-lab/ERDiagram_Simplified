@@ -39,7 +39,7 @@ function ERDiagram(props:Props) {
     const erDiagramRef = useRef() as any
     const display = state.commons.displayMenu.display
     const session = state.users.session
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const [hovered, setHovered] = useState<boolean>(false)
     const draggingObjectId = state.commons.draggingObjectId
 

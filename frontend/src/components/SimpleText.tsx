@@ -36,7 +36,7 @@ function SimpleText(props:Props) {
     const isSelected = currentSimpleText?.id === simpleText.id
     const [textareaStyle, setTextareaStyle] = useState<any>({})
     const session = state.users.session
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const [hovered, setHovered] = useState<boolean>(false)
 
     useEffect(() => {

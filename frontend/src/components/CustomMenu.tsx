@@ -26,7 +26,7 @@ const currentSimpleText = useAppSelector(state => state.simpleTexts.currentSimpl
 const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 const router = useRouter()
 const {data: session} = useSession()
-const axios = getAxios(session as CustomSessionType | null)
+const axios = getAxios(session as unknown as CustomSessionType | null)
 const canEdit = [CAN_EDIT, OWNER].includes(currentPermission) 
 let roomId:string | string[] | undefined = undefined
     if (router !== null) {

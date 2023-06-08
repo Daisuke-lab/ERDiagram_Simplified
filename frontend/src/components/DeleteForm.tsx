@@ -22,7 +22,7 @@ function DeleteForm(props:Props) {
     const [input, setInput] = useState<string>('')
     const router = useRouter()
     const { data: session } = useSession()
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
 
     const formModalProps = {title, open, setOpen}
     const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {

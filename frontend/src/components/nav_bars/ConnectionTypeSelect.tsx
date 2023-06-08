@@ -42,7 +42,7 @@ function ConnectionTypeSelect(props:Props) {
     const canEdit = [OWNER, CAN_EDIT].includes(currentPermission)
     const dispatch = useAppDispatch()
     const { data: session } = useSession()
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const handleTooltipClose = () => {
         setOpen(false);
       };

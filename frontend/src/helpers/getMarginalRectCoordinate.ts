@@ -1,8 +1,8 @@
 import * as Konva from "konva"
 import React from "react"
 import AnchorLocationType from "../../types/AnchorLocationType"
-import { anchorDistance } from "./getAnchorPoint"
-import { BOTTOM, LEFT, RIGHT, TOP } from "../constant"
+
+import { ANCHOR_DISTANCE, BOTTOM, LEFT, RIGHT, TOP } from "../constant"
 
 
 export default function getMarginalRectCoordinate(targetRef:React.RefObject<Konva.default.Shape>, location:AnchorLocationType) {
@@ -13,13 +13,13 @@ export default function getMarginalRectCoordinate(targetRef:React.RefObject<Konv
 
     switch(location) {
         case TOP:
-            return  {x: x - anchorDistance, y: y - anchorDistance, width: width + anchorDistance*2, height: anchorDistance}
+            return  {x: x - ANCHOR_DISTANCE, y: y - ANCHOR_DISTANCE, width: width + ANCHOR_DISTANCE*2, height: ANCHOR_DISTANCE}
         case BOTTOM:
-            return {x:x - anchorDistance, y:y + height, width:width + anchorDistance*2, height:anchorDistance}
+            return {x:x - ANCHOR_DISTANCE, y:y + height, width:width + ANCHOR_DISTANCE*2, height:ANCHOR_DISTANCE}
         case LEFT:
-            return {x:x - anchorDistance, y, width:anchorDistance, height}
+            return {x:x - ANCHOR_DISTANCE, y, width:ANCHOR_DISTANCE, height}
         case RIGHT:
-            return {x:x + width, y, width:anchorDistance, height}
+            return {x:x + width, y, width:ANCHOR_DISTANCE, height}
         default:
             return {x:0,y:0,width:0, height:0}
     }

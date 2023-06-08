@@ -31,8 +31,8 @@ export default function Connection(props:Props) {
     const display = state.commons.displayMenu.display
 
     const {x:sourceX, y:sourceY, width:sourceWidth, height:sourceHeight} = getRect(source)
-    const sourceR = getEdgeR(connection.source?.anchorLocation ?? 0, sourceWidth, sourceHeight)
-    const sourceRotation = getEdgeRotation(connection.source?.anchorLocation ?? 0, sourceWidth, sourceR, source?.rotation() ?? 0)
+    const sourceR = getEdgeR(connection.source?.anchorLocation, sourceWidth, sourceHeight)
+    const sourceRotation = getEdgeRotation(connection.source?.anchorLocation, sourceWidth, sourceR, source?.rotation() ?? 0)
     const sourceRadians = (Math.PI / 180) * sourceRotation
     const sourceCosTheta = Math.cos(sourceRadians)
     const sourceSinTheta = Math.sin(sourceRadians)

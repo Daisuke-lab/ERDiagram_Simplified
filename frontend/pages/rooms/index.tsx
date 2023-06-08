@@ -23,7 +23,7 @@ const Rooms: NextPage = (props) =>  {
   const router = useRouter()
   const dispatch = useAppDispatch()
   const { data: session } = useSession()
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   useEffect(() => {
     dispatch(setCurrentUser(user))
   }, [])
@@ -61,7 +61,7 @@ const Rooms: NextPage = (props) =>  {
 }
 export async function getServerSideProps(context:any) {
   const session = await getSession(context)
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   let user:UserType | null= null
   try {
     const res = await axios.get(`/api/v1/user/${session?.id}`)

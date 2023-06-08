@@ -13,7 +13,7 @@ const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 const currentRoom  = useAppSelector(state => state.commons.currentRoom)
   const open = Boolean(anchorEl);
   const { data: session } = useSession()
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };

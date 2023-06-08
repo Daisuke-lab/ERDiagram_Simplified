@@ -47,7 +47,7 @@ function RoomPreview(props:Props) {
     const { data: session } = useSession()
     const user = session?.user as UserType
     const dispatch = useAppDispatch()
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const currentUser = useAppSelector(state => state.users.currentUser)
     const onStarred = async (add:boolean) => {
         console.log({add})

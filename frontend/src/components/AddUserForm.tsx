@@ -23,7 +23,7 @@ function AddUserForm() {
     const dispatch = useAppDispatch();
     const { enqueueSnackbar } = useSnackbar();
     const { data: session} = useSession()
-    const axios = getAxios(session as CustomSessionType | null)
+    const axios = getAxios(session as unknown as CustomSessionType | null)
     const { register, handleSubmit, formState:{ errors }, control, reset, setValue } = useForm();
     const onAddUser = async (data:any) => {
         let inputs = removeBlankAndNull(data) as ObjectType

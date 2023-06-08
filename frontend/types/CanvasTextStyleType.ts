@@ -5,7 +5,8 @@ export interface CanvasTextStyleType {
     fontStyle?: "unset" | "italic",
     textDecorationLine?: "unset" | "underline",
     textAlign?: "unset" | "left" | "center" | "right",
-    color?: string
+    color?: string,
+    fill?: string
 }
 
 export default CanvasTextStyleType

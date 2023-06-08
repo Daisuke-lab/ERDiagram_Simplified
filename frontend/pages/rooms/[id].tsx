@@ -67,7 +67,7 @@ const Room: NextPage = (props) => {
   
 
   useEffect(() => {
-    const permission = getCurrentPermission(currentRoom, session as null | CustomSessionType)
+    const permission = getCurrentPermission(currentRoom, (session as unknown) as null | CustomSessionType)
     switch(permission) {
       case CAN_READ:
         setTitle("Warning")
@@ -145,7 +145,7 @@ const Room: NextPage = (props) => {
 export async function getServerSideProps(context:any) {
   const session = await getSession(context)
   console.log({session})
-  const axios = getAxios(session as CustomSessionType | null)
+  const axios = getAxios(session as unknown as CustomSessionType | null)
   const roomId = context.params.id
   let erDiagrams:ErDiagramType[] = []
   let connections:ConnectionType[] = []
@@ -179,7 +179,7 @@ export async function getServerSideProps(context:any) {
     console.log(err)
   }
 
-  // if (!hasAccessToRoom(currentRoom, session as CustomSessionType | null)) {
+  // if (!hasAccessToRoom(currentRoom, session as unknown as CustomSessionType | null)) {
   //   return { redirect: {permanent: false,
   //     destination: '/'} }
   // }

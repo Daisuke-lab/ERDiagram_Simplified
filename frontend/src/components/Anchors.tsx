@@ -6,7 +6,6 @@ import {TOP, LEFT, RIGHT, BOTTOM, ER_DIAGRAM, DEFAULT_ER_DIAGRAM_ROW_HEIGHT, ANC
 import Anchor from './Anchor'
 import * as Konva from "konva"
 import {getRotationofXY} from "../helpers/getAnchorPoint"
-import getMarginalLinePoints from '../helpers/getMarginalLinePoints'
 import { Stage, Layer, Rect, Text, Line, Transformer } from "react-konva";
 import { getCenter, getRect } from '../helpers/transformHelper'
 
