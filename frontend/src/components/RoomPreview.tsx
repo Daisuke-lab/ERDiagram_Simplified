@@ -32,7 +32,7 @@ import getAxios from '../helpers/getAxios';
 import { CustomSessionType, UserType } from '../../types';
 import ShareForm from "./ShareForm"
 import { setCurrentUser } from '../../store/reducers/userReducer';
-import { updateCurrentRoom } from '../../store/reducers/commonReducer';
+import { setCurrentRoom } from '../../store/reducers/commonReducer';
 
 
 interface Props {
@@ -67,7 +67,7 @@ function RoomPreview(props:Props) {
     }
 
     const onShare = () => {
-        dispatch(updateCurrentRoom(room))
+        dispatch(setCurrentRoom(room))
         setShareOpen(true)
     }
 

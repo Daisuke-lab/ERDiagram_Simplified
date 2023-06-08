@@ -142,6 +142,7 @@ function ERDiagram(props:Props) {
         onContextMenu={handleRightClick}
         onDragMove={handleCanvasChange}
         onDragEnd={handleCanvasEnd}
+        onDragStart={() => dispatch(setDraggingObjectId(erDiagram.id))}
         ref={erDiagramRef}
         id={erDiagram.id}
         onTransform={handleCanvasChange}

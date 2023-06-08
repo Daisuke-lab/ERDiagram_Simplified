@@ -6,6 +6,7 @@ import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,11 +35,16 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
+	@Value("${spring.datasource.url:DEFAULT}")
+	private String mongoDbUrl;
+
+
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
+
 				registry.addMapping("/**")
 						.allowedOrigins("http://localhost:3000")
 						.allowedMethods("GET", "POST", "PUT", "DELETE")
@@ -49,7 +55,7 @@ public class BackendApplication {
 
 	@Bean
 	public MongoClient mongo() {
-		ConnectionString connectionString = new ConnectionString("mongodb+srv://daisuke:3153Zr0314@kj.6x7x0.mongodb.net/test");
+		ConnectionString connectionString = new ConnectionString(mongoDbUrl);
 		MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
 				.applyConnectionString(connectionString)
 				.build();

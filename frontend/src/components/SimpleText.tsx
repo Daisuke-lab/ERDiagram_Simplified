@@ -15,6 +15,7 @@ import extractCanvasStyleFromRef from '../helpers/extractCanvasStyleFromRef';
 import Anchors from './Anchors';
 import getTextarea from '../helpers/getTextarea';
 import saveTextarea from '../helpers/saveTextarea';
+import { setDraggingObjectId } from '../../store/reducers/commonReducer';
 
 
 interface Props {
@@ -89,6 +90,7 @@ function SimpleText(props:Props) {
   
 
       const handleCanvasEnd = async (e:any) => {
+        dispatch(setDraggingObjectId(null))
         const position = e.target.position();
         const newSimpleText = {
           ...simpleText,
@@ -146,6 +148,7 @@ function SimpleText(props:Props) {
         onDragMove={handleCanvasChange}
         onTransform={handleCanvasChange}
         onDragEnd={handleCanvasEnd}
+        onDragStart={() => dispatch(setDraggingObjectId(simpleText.id))}
         onTransformEnd={handleCanvasEnd}
         name={SIMPLE_TEXT}
       />

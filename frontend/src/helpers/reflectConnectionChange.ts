@@ -4,6 +4,7 @@ import {MessageType, ConnectionType} from "../../types"
 import { CREATE, DELETE, UPDATE } from '../constant';
 export default function reflectConnectionChange(state:RootState, dispatch:AppDispatch, msg:MessageType<ConnectionType>) {
     const connection = msg.newData;
+    const deletedConnection = msg.oldData
     const session = state.users.session
 
 
@@ -16,7 +17,7 @@ export default function reflectConnectionChange(state:RootState, dispatch:AppDis
             dispatch(updateConnection(connection))
             break
         case DELETE:
-            dispatch(deleteConnection(connection))
+            dispatch(deleteConnection(deletedConnection))
             break
         default:
             return;

@@ -22,15 +22,13 @@ function Anchors(props:Props) {
     const {state, dispatch, targetRef, hovered} = props
     const locations:AnchorLocationType[] = [TOP, LEFT, RIGHT, BOTTOM]
     const {width, height,x, y} = getRect(targetRef.current)
-
-    //const x = targetRef.current?.attrs.x - ANCHOR_DISTANCE*2
-    //const y = targetRef.current?.attrs.y - ANCHOR_DISTANCE*2
-
-
+    const draggingObjectId = state.commons.draggingObjectId
+    // if you remove valueOf, it won't work. isDragging() will work neither.
+    const dragging = targetRef.current?.attrs?.id.valueOf === draggingObjectId?.valueOf
     const connectionPreview = state.connections.connectionPreview
+    const showAnchors = dragging === false && (hovered  || connectionPreview != null)
 
-    // const width = (targetRef.current?.attrs.width * targetRef.current?.attrs.scaleX)// + anchorDistance*4
-    // let height = (targetRef.current?.attrs.height * targetRef.current?.attrs.scaleY)// + anchorDistance*4
+
     const widthWithMargin = width + ANCHOR_DISTANCE*4
     const heightWithMargin = height + ANCHOR_DISTANCE*4
 
@@ -45,7 +43,7 @@ function Anchors(props:Props) {
     <>
     <Rect x={centerX + r*sinTheta} y={centerY - r*cosTheta} width={widthWithMargin} height={heightWithMargin} 
        rotation={targetRef.current?.rotation()}/>
-    {(hovered  || connectionPreview != null) && locations.map((location, index) => (
+    {showAnchors && locations.map((location, index) => (
      <><Anchor location={location} key={`${targetRef.current?.attrs.id ?? uuid()}-anchor-${location}`}
      {...props}/>
      
