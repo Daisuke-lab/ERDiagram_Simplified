@@ -71,3 +71,5 @@ yarn-error.log*
 
 google_credentials.json
 .env
+# Local Netlify folder
+.netlify

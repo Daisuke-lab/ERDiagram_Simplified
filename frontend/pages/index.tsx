@@ -20,14 +20,14 @@ const Home: NextPage = () => {
         <div>
         <div
         className={styles.background}>        
-      {/* <Image
-        src={background}
+      <Image
+        src="/homepage.jpg"
         layout="fill"
         
         objectFit="cover"
         alt="background"
         //
-      /> */}
+      />
       </div>
 
       <div className={styles.titleContainer}>
