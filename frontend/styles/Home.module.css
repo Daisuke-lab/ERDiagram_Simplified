@@ -130,10 +130,10 @@
 }
 
 .startButton {
-  margin-right: 70%;
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: bold;
+  margin-right: 70% !important;
+  margin-left: auto !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
 }
 
 .titleContainer {
