@@ -45,7 +45,7 @@ function Auth({ children }:any) {
     const isNoAuth = isNoAuthPage(window.location.pathname)
     setNoAuth(isNoAuth)
     if (status === "loading") return // Do nothing while loading
-    if (!isUser &&!isNoAuth) {signIn()} // If not authenticated, force log in
+    if (!isUser &&!isNoAuth) {window.location.replace(window.location.origin)} // If not authenticated, force log in
     if (noAuth && isUser && !isRoomPage(window.location.pathname)) {router.push('/rooms')}
   }, [isUser, status])
 
@@ -73,7 +73,7 @@ const isNoAuthPage = (pathname:string) => {
   if (isRoomPage(pathname)) {
     return true
   }
-  const noAuthPages = ["/"]
+  const noAuthPages = ["/", "api/auth/signout"]
   if (noAuthPages.includes(pathname)) {
     return true
   }

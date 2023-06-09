@@ -13,7 +13,6 @@ import {CustomSessionType} from "../../types"
 import { RESTRICTED } from '../../src/constant';
 import { setCurrentUser } from '../../store/reducers/userReducer';
 import { useAppDispatch } from '../../src/helpers/hooks';
-const secret = process.env.NEXTAUTH_SECRET
 
 interface Props {
   user: UserType | null

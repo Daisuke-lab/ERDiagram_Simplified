@@ -85,7 +85,7 @@ function Layout(props:any) {
                 onClose={handleClose}
               >
                 {session !== null?
-                <MenuItem onClick={() => signOut()}>Sign Out</MenuItem>
+                <MenuItem onClick={() => signOut({ callbackUrl: window.location.origin })}>Sign Out</MenuItem>
                 :<MenuItem onClick={() => setOpen(true)}>Sign In</MenuItem>}
               </Menu>
               {open?<LoginModal open={open} setOpen={setOpen}/>:<></>}
