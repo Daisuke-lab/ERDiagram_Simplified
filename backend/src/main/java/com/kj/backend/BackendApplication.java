@@ -51,6 +51,7 @@ public class BackendApplication {
 
 				registry.addMapping("/**")
 						.allowedOrigins(clientUrl)
+						.allowedOrigins("http://localhost:3000")
 						.allowedMethods("GET", "POST", "PUT", "DELETE")
 						.allowedHeaders("*");
 			}
