@@ -9,4 +9,4 @@ RUN mv /root/workspace/target/backend-1.0.0.jar /root/deployment/backend-1.0.0.j
 RUN rm -rf /root/workspace
 RUN rm -rf /root/.m2
 EXPOSE 8000
-CMD java -jar /root/deployment/backend-1.0.0.jar -Dspring.config.location="file:/root/deployment/application.properties"
+CMD cd /root/deployment && java -jar backend-1.0.0.jar
