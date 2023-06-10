@@ -37,6 +37,10 @@ public class BackendApplication {
 
 	@Value("${spring.datasource.url:DEFAULT}")
 	private String mongoDbUrl;
+	
+	@Value("${client.url:}:http://localhost:3000")
+	private String clientUrl;
+
 
 
 	@Bean
@@ -46,7 +50,7 @@ public class BackendApplication {
 			public void addCorsMappings(CorsRegistry registry) {
 
 				registry.addMapping("/**")
-						.allowedOrigins("http://localhost:3000")
+						.allowedOrigins(clientUrl)
 						.allowedMethods("GET", "POST", "PUT", "DELETE")
 						.allowedHeaders("*");
 			}
