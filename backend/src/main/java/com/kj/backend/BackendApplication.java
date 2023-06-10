@@ -38,7 +38,7 @@ public class BackendApplication {
 	@Value("${spring.datasource.url:DEFAULT}")
 	private String mongoDbUrl;
 	
-	@Value("${client.url:}:http://localhost:3000")
+	@Value("${client.url:http://localhost:3000}")
 	private String clientUrl;
 
 
