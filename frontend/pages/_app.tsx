@@ -24,6 +24,7 @@ export default function App({
     <Provider  store={store}>
     <SessionProvider session={session}>
     <SnackbarProvider maxSnack={3}>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
       <Auth>
         <Loading/>
         <Component {...pageProps}  store={store} />
@@ -54,9 +55,11 @@ function Auth({ children }:any) {
     return children
   }
 
-  return <div style={{textAlign: "center", marginTop: "100px"}}>
+  return <>
+        <div style={{textAlign: "center", marginTop: "100px"}}>
           <CircularProgress style={{width: "70px", height: "70px"}}/>
           </div>
+        </>
 }
 
 const isRoomPage = (pathname:string) => {
