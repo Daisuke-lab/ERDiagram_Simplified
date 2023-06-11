@@ -25,9 +25,6 @@ export default function App({
     <Provider  store={store}>
     <SessionProvider session={session}>
     <SnackbarProvider maxSnack={3}>
-      <Head>
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
-      </Head>
     
       <Auth>
         <Loading/>

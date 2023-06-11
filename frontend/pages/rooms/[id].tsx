@@ -41,7 +41,7 @@ interface Props {
   currentRoom: RoomType,
   permission: PermissionType
 }
-const SOCKET_URL = 'http://localhost:8000/ws-message';
+const SOCKET_URL = `${process.env.NEXT_PUBLIC_API_URL}/ws-message`;
 
 
 const Room: NextPage = (props) => {
