@@ -14,6 +14,7 @@ import axios from "axios"
 import { updateSession } from "../store/reducers/userReducer"
 import { SnackbarProvider} from 'notistack';
 import Loading from "../src/components/Loading"
+import Head from 'next/head'
 
 
 export default function App({
@@ -24,7 +25,10 @@ export default function App({
     <Provider  store={store}>
     <SessionProvider session={session}>
     <SnackbarProvider maxSnack={3}>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+      <Head>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+      </Head>
+    
       <Auth>
         <Loading/>
         <Component {...pageProps}  store={store} />
