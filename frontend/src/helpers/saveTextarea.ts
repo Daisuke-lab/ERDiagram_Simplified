@@ -22,9 +22,6 @@ export default function saveTextarea(state:RootState, dispatch:AppDispatch, stag
 
     let newShape = null
     console.log("you are in saveTextarea")
-    console.log(textarea)
-    console.log(session)
-    console.log(stage)
     if (textarea !== null && stage !== null && stage !== undefined) {
         console.log("you found textarea")
         const canvasText:Konva.default.Text = stage.findOne(`#${textarea.getAttribute("id")}`)
