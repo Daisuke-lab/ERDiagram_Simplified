@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import LoginButton from './LoginButton'
 import Divider from '@mui/material/Divider';
 import styles from '../../styles/LoginModal.module.css'
+import DemoButton from './DemoButton';
+
+
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -27,7 +30,7 @@ interface Props {
 }
 
 export default function TransitionsModal(props:Props) {
-
+  
   return (
     <div>
       <Modal
@@ -51,6 +54,7 @@ export default function TransitionsModal(props:Props) {
               <LoginButton provider="google"/>
               <LoginButton provider="facebook"/>
               <LoginButton provider="github"/>
+              <DemoButton/>
             </div>
           </Box>
         </Fade>
