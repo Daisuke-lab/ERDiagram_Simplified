@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, useState, useEffect} from 'react'
 import { Navbar, Container,Nav  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
@@ -24,10 +24,18 @@ function NavBar() {
   const currentRoom = useAppSelector(state => state.commons.currentRoom)
   const currentPermission = useAppSelector(state => state.commons.currentPermission)
   const canEdit = [CAN_EDIT, OWNER].includes(currentPermission)
-  const initialTitle = currentRoom !== null && currentRoom?.title !== undefined?currentRoom?.title:"Untitled"
+  const [title, setTitle] = useState<string>(currentRoom?.title ?? "Untitled")
   const { data: session } = useSession()
   const axios = getAxios(session as unknown as CustomSessionType | null)
   const [shareOpen, setShareOpen] = useState<boolean>(false) 
+
+  //useEffectでわざわざやってやらないとundefinedになってしまう。
+  useEffect(() => {
+    if (typeof currentRoom?.title === "string") {
+      setTitle(currentRoom.title)
+    }
+  }, [currentRoom?.title])
+
   const onKeyDown = async (e:React.KeyboardEvent<HTMLInputElement>) => {
     const keyCode = e.keyCode;
     const target = e.target as HTMLInputElement
@@ -45,16 +53,18 @@ function NavBar() {
       }
     }
   }
+
   return (
     <>
   <Navbar bg="dark" variant="dark" className={styles.navBar}>
     <Container className={styles.navBarContainer}>
           <ArchitectureIcon className={styles.navBarIcon}/>
       <Input
-          defaultValue={initialTitle}
+          value={title}
           className={styles.titleInput}
           onKeyDown={onKeyDown}
           disabled={!canEdit}
+          onChange={(e:any) => {setTitle(e.target.value)}}
         />
     </Container>
     <Container className={styles.navOptionsContainer}>
