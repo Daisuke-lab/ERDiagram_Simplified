@@ -1,3 +1,3 @@
 # ERDiagram Simplified
 
-<img src=".github/images/Flow.png" alt="architecture" title="architecture">
+<img src=".github/images/Flow.jpg" alt="architecture" title="architecture">
