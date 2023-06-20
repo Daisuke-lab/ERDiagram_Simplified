@@ -15,7 +15,8 @@ import ArchitectureIcon from '@mui/icons-material/Architecture';
 import Avatar from '@mui/material/Avatar';
 import { useSession, signIn, signOut } from "next-auth/react"
 import LoginModal from './LoginModal';
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { Tooltip } from '@mui/material';
 
 function Layout(props:any) {
 
@@ -54,6 +55,12 @@ function Layout(props:any) {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             ER-Diagram simplified
           </Typography>
+          <IconButton style={{zIndex: 10}}>
+          <Tooltip title={<a href="https://github.com/Daisuke-lab/ERDiagram_Simplified"  target="_blank"
+          style={{color:"white"}}>check source code</a>} placement="top-start">
+            <GitHubIcon/>
+            </Tooltip>
+          </IconButton>
           {auth && (
             <div>
               <IconButton

@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState, useEffect} from 'react'
-import { Navbar, Container,Nav  } from 'react-bootstrap';
+import { Navbar, Container,Nav, } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import styles from "../../../styles/Navbar.module.css"
@@ -15,7 +15,9 @@ import { CustomSessionType } from '../../../types';
 import Button from '@mui/material/Button';
 import ShareForm from '../ShareForm';
 import { CAN_EDIT, OWNER } from '../../constant';
-
+import { IconButton, Tooltip } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { useRouter } from 'next/router';
 
 
 function NavBar() {
@@ -28,6 +30,7 @@ function NavBar() {
   const { data: session } = useSession()
   const axios = getAxios(session as unknown as CustomSessionType | null)
   const [shareOpen, setShareOpen] = useState<boolean>(false) 
+  const router = useRouter()
 
   //useEffectでわざわざやってやらないとundefinedになってしまう。
   useEffect(() => {
@@ -58,7 +61,17 @@ function NavBar() {
     <>
   <Navbar bg="dark" variant="dark" className={styles.navBar}>
     <Container className={styles.navBarContainer}>
+      <IconButton onClick={() => router.push("/rooms")}>
           <ArchitectureIcon className={styles.navBarIcon}/>
+          </IconButton>
+          <IconButton style={{color:"white"}}>
+          <Tooltip 
+          title={<a href="https://github.com/Daisuke-lab/ERDiagram_Simplified"  target="_blank"
+          style={{color:"white"}}>check source code</a>} 
+          placement="top-start">
+            <GitHubIcon/>
+            </Tooltip>
+          </IconButton>
       <Input
           value={title}
           className={styles.titleInput}
