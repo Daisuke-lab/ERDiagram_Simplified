@@ -3,10 +3,10 @@
 ## Site Link
 https://poetic-sfogliatella-559e33.netlify.app/
 <br><br>
-![](.github/videos/version2.mp4)
+
 ## Demo Video
 <video width="100%" controls>
-  <source src=".github/videos/version2.mov" type="video/mp4">
+  <source src="https://github.com/Daisuke-lab/ERDiagram_Simplified/raw/master/.github/videos/version2.mp4" type="video/mp4">
 </video>
 <br><br>
 
