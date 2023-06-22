@@ -5,9 +5,9 @@ https://poetic-sfogliatella-559e33.netlify.app/
 <br><br>
 
 ## Demo Video
-<video width="100%" controls src="https://youtu.be/Tu6lZYIZPkA" >
+[![Watch the video](https://img.youtube.com/vi/Tu6lZYIZPkA/maxresdefault.jpg)](https://youtu.be/Tu6lZYIZPkA)
 
-</video>
+<div><video controls src="https://user-images.githubusercontent.com/20723919/120432939-99194880-c3b5-11eb-8eea-f4aa424d479f.MP4" muted="false"></video></div>
 <br><br>
 
 ## Architecture (Flow)
