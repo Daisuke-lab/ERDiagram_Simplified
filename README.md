@@ -5,8 +5,7 @@ https://poetic-sfogliatella-559e33.netlify.app/
 <br><br>
 
 ## Demo Video
-<video width="100%" controls>
-  <source src="https://github.com/Daisuke-lab/ERDiagram_Simplified/raw/master/.github/videos/version2.mp4" type="video/mp4">
+<video width="100%" controls src="https://www.youtube.com/watch?v=Tu6lZYIZPkA" >
 </video>
 <br><br>
 
