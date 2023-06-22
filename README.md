@@ -5,7 +5,8 @@ https://poetic-sfogliatella-559e33.netlify.app/
 <br><br>
 
 ## Demo Video
-<video width="100%" controls src="https://www.youtube.com/watch?v=Tu6lZYIZPkA" >
+<video width="100%" controls src="https://youtu.be/Tu6lZYIZPkA" >
+
 </video>
 <br><br>
 
