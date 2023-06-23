@@ -102,7 +102,11 @@ function NavBar() {
           </Button>
       </Nav.Item>
       <Nav.Item className={styles.navOption}>
+        <Tooltip title="Right-Click white screen. Everything starts from there." placement="top">
+        <Button className={styles.navButton}>
           Help
+        </Button>
+          </Tooltip>
       </Nav.Item>
     </Container>
     <EditingNavBar/>
