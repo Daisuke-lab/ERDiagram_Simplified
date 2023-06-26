@@ -28,7 +28,7 @@ jobs:
         echo GITHUB_CLIENT_ID=${{ secrets.GITHUB_CLIENT_ID }} >> ${{ github.workspace }}/frontend/.env.production &&
         echo GITHUB_CLIENT_SECRET=${{ secrets.GITHUB_CLIENT_SECRET }} >> ${{ github.workspace }}/frontend/.env.production &&
         echo JWT_SECRET=${{ secrets.JWT_SECRET }} >> ${{ github.workspace }}/frontend/.env.production &&
-        echo NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} >> ${{ github.workspace }}/frontend/.env.production &&
+        echo NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} >> ${{ github.workspace }}/frontend/.env.production
       
       
     - name: Login to Docker Hub
