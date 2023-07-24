@@ -1,7 +1,7 @@
 # ERDiagram Simplified
 
 ## Site Link
-https://poetic-sfogliatella-559e33.netlify.app/
+https://erdiagram-simplified.daisukekikuchi.net/
 <br><br>
 
 ## Demo Video
