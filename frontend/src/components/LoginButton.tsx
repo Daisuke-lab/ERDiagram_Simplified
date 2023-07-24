@@ -43,7 +43,7 @@ function LoginButton(props:Props) {
             <span className={styles.loginIconContainer}>
             {generateIcon()}
             </span>
-            <span className={styles.loginText}>Login With {prividerName}</span>
+            <span className={styles.loginText}>Login with {prividerName}</span>
         </button>
     )
 }
