@@ -1,0 +1,5 @@
+FROM maven:3.6.3-jdk-11
+
+RUN mkdir -p /root/workspace
+RUN rm -rf /root/.m2
+WORKDIR /root/workspace
