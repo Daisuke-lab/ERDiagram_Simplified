@@ -28,6 +28,7 @@ import java.util.UUID;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 @EnableMongoAuditing
+@EnableMongoRepositories
 public class BackendApplication {
 
 
@@ -60,6 +61,7 @@ public class BackendApplication {
 
 	@Bean
 	public MongoClient mongo() {
+		System.out.println(mongoDbUrl);
 		ConnectionString connectionString = new ConnectionString(mongoDbUrl);
 		MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
 				.applyConnectionString(connectionString)

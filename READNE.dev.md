@@ -13,6 +13,13 @@ mkdir backend\.m2
 docker run -it -v ${PWD}\backend:/root/workspace/ -v ${PWD}\backend\.m2:/root/.m2/ --network=host backend /bin/bash
 ```
 
+### 3. Define application.properties
+
+- backend\src\main\resources\application.properties
+```
+spring.datasource.url=XXXXXXXXXXXx
+```
+
 ### 3.start appliction
 ```
 root/workspace> mvn spring-boot:run
