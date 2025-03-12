@@ -10,7 +10,7 @@ docker build . -f backend/Dockerfile.dev -t backend
 ### 2. Run an container
 ```
 mkdir backend\.m2
-docker run -it -v ${PWD}\backend:/root/workspace/ -v ${PWD}\backend\.m2:/root/.m2/ --network=host backend /bin/bash
+docker run -it -v ${PWD}\backend:/root/workspace/ -v ${PWD}\backend\.m2:/root/.m2/ -p 8080:8080 backend /bin/bash
 ```
 
 ### 3. Define application.properties
@@ -36,6 +36,23 @@ docker build . -f frontend/Dockerfile.dev -t frontend
 ### 2. Run an container
 ```
 docker run -it -v ${PWD}\frontend:/root/workspace/ -p 3000:3000 frontend /bin/bash
+```
+
+
+### 3 define env
+
+- .env.local
+```
+NEXT_PUBLIC_API_URL=http://docker.host.internal:8080
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+FACEBOOK_CLIENT_ID=
+FACEBOOK_CLIENT_SECRET=
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+JWT_SECRET=
+MONGODB_URI=
+NODE_ENV=
 ```
 
 ### 3.start appliction

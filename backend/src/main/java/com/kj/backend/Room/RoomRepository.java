@@ -14,6 +14,9 @@ public interface RoomRepository  extends MongoRepository<Room, String>,
         QuerydslPredicateExecutor<Room>{
 
 
+    boolean existsRoomByTitle(String title);
+
+
 
 
 }
