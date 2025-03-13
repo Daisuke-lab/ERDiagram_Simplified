@@ -39,23 +39,23 @@ docker run -it -v ${PWD}\frontend:/root/workspace/ -p 3000:3000 frontend /bin/ba
 ```
 
 
-### 3 define env
+### 3. Define env
 
 - .env.local
 ```
-NEXT_PUBLIC_API_URL=http://docker.host.internal:8080
-GOOGLE_CLIENT_ID=
+NEXT_PUBLIC_API_URL=http://host.docker.internal:8080
+GOOGLE_CLIENT_ID=3391403677-3f0jtddiok448gcv1m1uc0tul1trq8ig.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=
 FACEBOOK_CLIENT_ID=
 FACEBOOK_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
+GITHUB_CLIENT_ID=Iv1.084be9e6b8301a69
 GITHUB_CLIENT_SECRET=
 JWT_SECRET=
 MONGODB_URI=
-NODE_ENV=
+NODE_ENV=development
 ```
 
-### 3.start appliction
+### 4. Start appliction
 ```
 root/workspace> npm run dev 
 ```
