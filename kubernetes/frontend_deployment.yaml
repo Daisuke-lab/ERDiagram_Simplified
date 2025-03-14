@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: er-frontend-deploy
+spec:
+  replcias: 2
+  selector:
+    matchLabels:
+      app: er
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: er
+        tier: frontend
+    spec:
+      containers:
+        - name: er-backend-pod
+          image: daisukezr/erdiagram-simplified-frontend:latest
