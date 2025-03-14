@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: er-backend-deploy
 spec:
-  replcias: 2
+  replicas: 2
   selector:
     matchLabels:
       app: er
@@ -14,7 +14,14 @@ spec:
         app: er
         tier: backend
     spec:
+      volumes:
+        - name: application-properties
+          configMap:
+            name: er-backend-config
       containers:
         - name: er-backend-pod
           image: daisukezr/erdiagram-simplified-backend:latest
+          volumeMounts:
+            - name: application-properties
+              mountPath: /root/workspace/src/main/resources/
 

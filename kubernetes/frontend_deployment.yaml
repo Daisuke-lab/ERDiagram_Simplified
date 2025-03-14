@@ -14,6 +14,13 @@ spec:
         app: er
         tier: frontend
     spec:
+      volumes:
+        - name: env-local
+          configMap:
+            name: er-frontend-config
       containers:
         - name: er-backend-pod
           image: daisukezr/erdiagram-simplified-frontend:latest
+          volumeMounts:
+            - name: env-local
+              mountPath: /root/workspace/
