@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: er-backend-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: er
     tier: backend
   ports:
   - port: 8080
     targetPort: 8080
+    nodePort: 32001

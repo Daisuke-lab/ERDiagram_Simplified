@@ -3,7 +3,7 @@ HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 .github/
-.m2
+.m2/
 ### STS ###
 .apt_generated
 .classpath

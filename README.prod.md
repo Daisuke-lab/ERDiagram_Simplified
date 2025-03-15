@@ -11,3 +11,4 @@ kubectl create configmap er-frontend-config --from-file=.env.local
 ```
 kubectl create configmap er-backend-config --from-file=application.properties
 ```
+
