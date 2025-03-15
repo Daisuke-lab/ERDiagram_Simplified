@@ -49,6 +49,7 @@ out/
 
 # production
 build/
+backend-*.jar
 
 # misc
 .DS_Store
