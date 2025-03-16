@@ -5,9 +5,9 @@ RUN mkdir -p /root/deployment
 COPY src/ /root/workspace/src/
 COPY ./pom.xml /root/workspace/pom.xml
 #COPY application.properties /root/deployment/
-RUN cd /root/workspace && mvn install
+RUN cd /root/workspace && mvn clean install
 RUN mv /root/workspace/target/backend*.jar /root/deployment/backend-1.0.0.jar
-RUN rm -rf /root/workspace
-RUN rm -rf /root/.m2
+#RUN rm -rf /root/workspace
+#RUN rm -rf /root/.m2
 EXPOSE 8000
 CMD cd /root/deployment && java -jar backend-1.0.0.jar
