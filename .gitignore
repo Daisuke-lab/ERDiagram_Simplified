@@ -49,6 +49,7 @@ out/
 
 # production
 build/
+backend-1.0.0.jar
 backend-*.jar
 
 # misc

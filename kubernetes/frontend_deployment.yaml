@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: er-frontend-deploy
 spec:
-  replcias: 2
+  replicas: 1
   selector:
     matchLabels:
       app: er

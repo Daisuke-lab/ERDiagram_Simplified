@@ -12,3 +12,4 @@ docker build . -f Dockerfile -t backend-production
 docker run -it -v ${PWD}\src\main\resources:/root/deployment/ -p 8080:8080 backend-production
 ```
 
+docker run -it -v ${PWD}\src\main\resources:/root/deployment/ -p 8080:8080 daisukezr/erdiagram-simplified-backend /bin/bash
