@@ -11,5 +11,5 @@ RUN ls /root/deployment/backend-1.0.0.jar
 #RUN rm -rf /root/workspace
 #RUN rm -rf /root/.m2
 RUN 
-EXPOSE 8000
+EXPOSE 8080
 CMD cd /root/deployment && java -jar backend-1.0.0.jar

@@ -23,5 +23,5 @@ spec:
           image: daisukezr/erdiagram-simplified-backend:latest
           volumeMounts:
             - name: application-properties
-              mountPath: /root/workspace/src/main/resources/
+              mountPath: /root/deployment/config/
 

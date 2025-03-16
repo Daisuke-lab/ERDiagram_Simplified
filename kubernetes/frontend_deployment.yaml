@@ -23,4 +23,4 @@ spec:
           image: daisukezr/erdiagram-simplified-frontend:latest
           volumeMounts:
             - name: env-local
-              mountPath: /root/workspace/
+              mountPath: /root/workspace/.env.local

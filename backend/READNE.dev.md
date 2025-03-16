@@ -24,3 +24,8 @@ spring.datasource.url=XXXXXXXXXXXx
 ```
 root/workspace> mvn spring-boot:run
 ```
+
+### If you can't connect to MongoDB
+It is possible that MongoDB has been paused due to non-access for a while.<br>
+Enable it in the following page.
+https://cloud.mongodb.com/v2/60da479703000343d7fbee7b#/clusters
