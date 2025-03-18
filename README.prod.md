@@ -67,5 +67,31 @@ kubectl apply -f backend_service.yaml
 kubectl apply -f frontend_service.yaml
 ```
 
+### 4. DNS
+- https://navi.onamae.com/domain/setting/dsrecord/select
+ネームサーバー/DNS>ドメインDNS設定>DNSレコード設定を利用する
+
+
 ### 4. Set up Nginx
+
+```
+sudo yum -y install nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
+```
+sudo vim nginx-er-diagram.conf
+```
+
+- make sure domain is linked properly
+- erdiagram-simplified.daisukekikuchi.net
+```
+sudo yum install epel-release
+sudo yum install certbot-nginx
+sudo certbot --nginx
+```
+- certbot
+- https://medium.com/@eikachiu/install-certbot-with-nginx-on-amazon-linux-2023-0a908f73ceb1
+
 
