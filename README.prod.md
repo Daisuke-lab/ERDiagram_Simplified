@@ -81,6 +81,7 @@ sudo systemctl start nginx
 ```
 
 ```
+cd /etc/nginx
 sudo vim nginx-er-diagram.conf
 ```
 
@@ -95,3 +96,4 @@ sudo certbot --nginx
 - https://medium.com/@eikachiu/install-certbot-with-nginx-on-amazon-linux-2023-0a908f73ceb1
 
 
+try wihout k3s
