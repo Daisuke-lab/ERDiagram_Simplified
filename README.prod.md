@@ -72,7 +72,42 @@ kubectl apply -f frontend_service.yaml
 ネームサーバー/DNS>ドメインDNS設定>DNSレコード設定を利用する
 
 
-### 4. Set up Nginx
+
+### 5. Traefik
+
+- https://www.reddit.com/r/Traefik/comments/yu159c/cant_connect_websocket_on_k3s/
+- https://traefik.io/blog/secure-web-applications-with-traefik-proxy-cert-manager-and-lets-encrypt/
+- https://doc.traefik.io/traefik/https/acme/#certificatesduration
+- https://traefik.io/blog/https-on-kubernetes-using-traefik-proxy/
+
+you need to define what is called "certification resolver", which is passed as args in deployment of traefik
+in certification resolver, you need to pass domain, email, storage
+
+cert manager is doing the same as args in traefik controller
+- https://levelup.gitconnected.com/easy-steps-to-install-k3s-with-ssl-certificate-by-traefik-cert-manager-and-lets-encrypt-d74947fe7a8
+
+
+
+
+Assumption
+- you need to save acme.json in volume (/data)
+- the log says something useful
+- you need to up in port 80 first
+
+```
+mkdir -p /etc/traefik/
+vim /etc/traefik/traefik.yaml
+```
+
+
+
+
+
+
+
+
+
+### OLD
 
 ```
 sudo yum -y install nginx

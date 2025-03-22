@@ -24,3 +24,4 @@ spec:
           volumeMounts:
             - name: env-local
               mountPath: /root/workspace/.env.local
+              subPath: .env.local

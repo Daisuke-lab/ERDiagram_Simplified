@@ -1,0 +1,4 @@
+- --certificatesresolvers.myresolver.acme.tlschallenge
+            - --certificatesresolvers.myresolver.acme.email=kikuchidaisuke.zr@gmail.com
+            - --certificatesresolvers.myresolver.acme.storage=acme.json
+            - --certificatesresolvers.myresolver.acme.caserver=https://erdiagram-simplified.daisukekikuchi.net

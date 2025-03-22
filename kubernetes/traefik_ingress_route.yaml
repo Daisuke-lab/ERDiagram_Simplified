@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: er-traefik-route
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+    - match: PathPrefix(`/api/v1`)
+      kind: Rule
+      services:
+      - name: er-backend-service
+        port: 8080
+    - match: PathPrefix(`/`)
+      kind: Rule
+      services:
+      - name: er-frontend-service
+        port: 3000
+  tls:
+    certResolver: myresolver
