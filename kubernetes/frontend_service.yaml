@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: er-frontend-service
 spec:
-  type: NodePort
   selector:
     app: er
     tier: frontend
   ports:
   - port: 3000
     targetPort: 3000
-    nodePort: 32002

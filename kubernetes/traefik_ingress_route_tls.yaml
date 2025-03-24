@@ -4,7 +4,7 @@ metadata:
   name: er-traefik-route
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - match: Host(`erdiagram-simplified.daisukekikuchi.net`) &&  PathPrefix(`/api/v1`)
       kind: Rule
@@ -16,3 +16,7 @@ spec:
       services:
       - name: er-frontend-service
         port: 3000
+  tls:
+    certResolver: myresolver
+    domains:
+      - main: erdiagram-simplified.daisukekikuchi.net

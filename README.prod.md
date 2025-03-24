@@ -87,7 +87,14 @@ cert manager is doing the same as args in traefik controller
 - https://levelup.gitconnected.com/easy-steps-to-install-k3s-with-ssl-certificate-by-traefik-cert-manager-and-lets-encrypt-d74947fe7a8
 
 
+when I shut down traefik deployment, it stops showing "not found page"
+This is accessible. https://erdiagram-simplified.daisukekikuchi.net:30371/
 
+If I comment out the following, the port 80 is listening
+  #tls:
+    #certResolver: myresolver
+    #domains:
+    #- main: erdiagram-simplified.daisukekikuchi.net
 
 Assumption
 - you need to save acme.json in volume (/data)
