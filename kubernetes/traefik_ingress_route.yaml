@@ -6,7 +6,12 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`erdiagram-simplified.daisukekikuchi.net`) &&  PathPrefix(`/api/v1`)
+    - match: PathPrefix(`/api/v1`)
+      kind: Rule
+      services:
+      - name: er-backend-service
+        port: 8080
+    - match: PathPrefix(`/ws-message`)
       kind: Rule
       services:
       - name: er-backend-service

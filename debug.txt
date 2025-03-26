@@ -1,0 +1,8 @@
+why 
+/rooms/undefined/ws-message/info?t=1742870947325
+=> NEXT_PUBLIC_CLIENT_API_URL is undefined. so socketJS is using currnet url as path
+
+local
+http://host.docker.internal:8080/ws-message/info?t=1742955168867
+
+enable websocket in traefik

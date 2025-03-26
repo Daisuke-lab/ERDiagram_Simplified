@@ -6,7 +6,6 @@ let currentUser:UserType | null = null;
 
 if (typeof localStorage !== "undefined") {
     const stringifiedCurrentUser:string | null = localStorage.getItem("currentUser")
-    console.log(stringifiedCurrentUser)
     currentUser = (stringifiedCurrentUser?.includes("{")? JSON.parse(stringifiedCurrentUser): null) as null | UserType
 }
 

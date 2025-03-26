@@ -41,10 +41,11 @@ interface Props {
   currentRoom: RoomType,
   permission: PermissionType
 }
-const SOCKET_URL = `${process.env.NEXT_PUBLIC_API_URL}/ws-message`;
+
 
 
 const Room: NextPage = (props) => {
+  const SOCKET_URL = `${process.env.NEXT_PUBLIC_CLIENT_API_URL}/ws-message`;
   const {erDiagrams, connections, currentRoom, simpleTexts} = props as Props
   const state = useAppSelector(state => state)
   const [errorText, setErrorText] = useState<string>("")
@@ -87,6 +88,7 @@ const Room: NextPage = (props) => {
 
 
   useEffect(() => {
+    console.log(SOCKET_URL)
     dispatch(setCurrentRoom(currentRoom))
     dispatch(setErDiagrams(erDiagrams))
     dispatch(setConnections(connections))
@@ -144,7 +146,6 @@ const Room: NextPage = (props) => {
 
 export async function getServerSideProps(context:any) {
   const session = await getSession(context)
-  console.log({session})
   const axios = getAxios(session as unknown as CustomSessionType | null)
   const roomId = context.params.id
   let erDiagrams:ErDiagramType[] = []

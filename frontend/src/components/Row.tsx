@@ -34,7 +34,6 @@ function Row(props:Props) {
     }
 
     const onClick = () => {
-      console.log('row clicked')
         if (erDiagram === currentErDiagram && row !== currentRow) {
           dispatch(setCurrentRow(row))
           dispatch(setCurrentErDiagram(erDiagram))

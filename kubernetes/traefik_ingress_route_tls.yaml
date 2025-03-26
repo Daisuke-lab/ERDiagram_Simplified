@@ -1,12 +1,17 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: er-traefik-route
+  name: er-traefik-route-tls
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`erdiagram-simplified.daisukekikuchi.net`) &&  PathPrefix(`/api/v1`)
+    - match: PathPrefix(`/api/v1`)
+      kind: Rule
+      services:
+      - name: er-backend-service
+        port: 8080
+    - match: PathPrefix(`/ws-message`)
       kind: Rule
       services:
       - name: er-backend-service

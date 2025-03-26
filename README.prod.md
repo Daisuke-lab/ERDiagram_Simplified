@@ -65,6 +65,8 @@ kubectl apply -f backend_deployment.yaml
 kubectl apply -f frontend_deployment.yaml
 kubectl apply -f backend_service.yaml
 kubectl apply -f frontend_service.yaml
+kubectl apply -f traefik_ingress_route.yaml
+kubectl apply -f traefik_ingress_route_tls.yaml
 ```
 
 ### 4. DNS

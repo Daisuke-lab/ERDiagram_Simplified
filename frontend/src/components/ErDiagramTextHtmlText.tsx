@@ -35,7 +35,6 @@ function ErDiagramTextHtmlText(props:Props) {
     const onKeyDown = async (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
         const keyCode = e.keyCode;
         if (keyCode === 13) {
-            console.log("you are in enter")
             saveTextarea(state, dispatch, textRef.current?.getStage())
 
             // previewもここで更新する。text自体はsaveTextAreaで保存される。

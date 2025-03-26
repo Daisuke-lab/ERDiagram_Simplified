@@ -52,7 +52,6 @@ callbacks: {
   async jwt(params) { 
     const {account, token} = params
     if (account !== undefined) {
-      console.log(account)
       token.accessToken = account.id_token?? account.access_token;
     }
     return token;

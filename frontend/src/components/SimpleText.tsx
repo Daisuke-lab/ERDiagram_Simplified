@@ -63,7 +63,6 @@ function SimpleText(props:Props) {
                     trRef?.current?.hide()
                     const textareaStyle = {...DEFAULT_TEXTAREA_STYLE, ...convertCanvasStyleToHtmlStyle(textRef, textRef)}
                     const newCurrentCanvasTextStyle = extractCanvasStyleFromRef(textRef)
-                    console.log(newCurrentCanvasTextStyle)
                     dispatch(setCurrentCanvasTextStyle(newCurrentCanvasTextStyle))
                     setTextareaStyle(textareaStyle)
                     break

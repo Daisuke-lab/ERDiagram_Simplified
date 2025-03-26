@@ -64,7 +64,6 @@ function ERDiagram(props:Props) {
 
 
         const tr = trRef?.current
-        console.log("you are here")
         if (currentErDiagram?.id !== erDiagram.id) {
           dispatch(setCurrentErDiagram(erDiagram))
         }
