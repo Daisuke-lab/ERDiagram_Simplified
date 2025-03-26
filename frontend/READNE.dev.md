@@ -18,7 +18,8 @@ docker run -it -v ${PWD}:/root/workspace/ -p 3000:3000 frontend /bin/bash
 
 - .env.local
 ```
-NEXT_PUBLIC_API_URL=http://host.docker.internal:8080
+NEXT_PUBLIC_SSR_API_URL=http://host.docker.internal:8080
+NEXT_PUBLIC_CLIENT_API_URL=http://localhost:8080
 GOOGLE_CLIENT_ID=3391403677-3f0jtddiok448gcv1m1uc0tul1trq8ig.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=
 FACEBOOK_CLIENT_ID=

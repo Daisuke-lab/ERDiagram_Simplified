@@ -52,12 +52,17 @@ kubectl create configmap er-frontend-config --from-file=.env.local
 kubectl create configmap er-backend-config --from-file=application.properties
 ```
 
+
+
 ### 2. Clone Repository (to fetch kubernetes yaml file)
 ```
 sudo yum update
 sudo yum install -y git
 git clone https://github.com/Daisuke-lab/ERDiagram_Simplified.git
 ```
+
+
+
 
 ### 3. Apply templates
 ```
@@ -73,7 +78,14 @@ kubectl apply -f traefik_ingress_route_tls.yaml
 - https://navi.onamae.com/domain/setting/dsrecord/select
 ネームサーバー/DNS>ドメインDNS設定>DNSレコード設定を利用する
 
-
+### 5. Create PV/PVC for TLS
+```
+sudo mkdir -p /mnt/pv/er-tls
+sudo chown -R 1000:1000 /mnt/pv/er-tls
+sudo chmod -R 750 /mnt/pv/er-tls
+kubectl apply -f traefik_tls_pv.yaml
+kubectl apply -f traefik_tls_pvc.yaml
+```
 
 ### 5. Traefik
 
