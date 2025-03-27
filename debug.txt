@@ -5,4 +5,8 @@ why
 local
 http://host.docker.internal:8080/ws-message/info?t=1742955168867
 
+overwrite frontend image command with sleep
+and get into a container
+and inject console.log
+
 enable websocket in traefik
