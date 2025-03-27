@@ -3,10 +3,10 @@ kind: PersistentVolume
 metadata:
   name: er-tls-pv
 spec:
-  persistentVolumeReclaimPolicy: Retain
+  #persistentVolumeReclaimPolicy: Retain
   capacity:
-    storage: 500Mi
+    storage: 100Mi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/pv/er-tls"
+    path: "/home/ec2-user/volume"

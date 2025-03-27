@@ -6,7 +6,7 @@ metadata:
 spec:
   resources:
     requests:
-      storage: 500Mi
-  volumeName: "er-tls-pv"
+      storage: 100Mi
+  #volumeName: "er-tls-pv"
   accessModes:
     - ReadWriteOnce
