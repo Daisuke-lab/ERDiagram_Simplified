@@ -46,6 +46,8 @@ interface Props {
 
 const Room: NextPage = (props) => {
   const SOCKET_URL = `${process.env.NEXT_PUBLIC_CLIENT_API_URL}/ws-message`;
+  console.log(`SOCKET_URL:${SOCKET_URL}`)
+  console.log(`CLIENT_API_URL:${process.env.NEXT_PUBLIC_CLIENT_API_URL}`)
   const {erDiagrams, connections, currentRoom, simpleTexts} = props as Props
   const state = useAppSelector(state => state)
   const [errorText, setErrorText] = useState<string>("")
