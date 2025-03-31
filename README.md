@@ -15,11 +15,9 @@ https://erdiagram-simplified.daisukekikuchi.net/
 
 
 ## Overview
-```
-This website allows you to make your own ER Diagram, which represent Database Structure.
+This website allows you to make your own ER Diagram, which represent Database Structure.<br>
 This's real time async editor of diagrams, so you can edit it with your friends at the same time
 without reloading your browser!
-```
 
 ### Amazing Features!!
 - Real Time Communication (Websocket)
@@ -46,6 +44,6 @@ Mongo DB
 
  - Others
  ```
- Docker, AWS, Netlify, Github Action
+AWS, Kubernetes, Github Action, CodeDeploy
  ```
 
