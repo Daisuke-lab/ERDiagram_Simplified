@@ -10,7 +10,7 @@ https://erdiagram-simplified.daisukekikuchi.net/
 <br><br>
 
 ## Architecture (Flow)
-<img src=".github/images/Flow.jpg" alt="architecture" title="architecture">
+<img src=".github/images/architecture.jpg" alt="architecture" title="architecture">
 <br><br>
 
 
