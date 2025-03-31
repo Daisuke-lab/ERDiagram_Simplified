@@ -29,9 +29,7 @@ function AddUserForm() {
         let inputs = removeBlankAndNull(data) as ObjectType
         try {
             const endpoint = `/api/v1/room/add_user/${currentRoom?.id}`
-            console.log(inputs)
             const res = await axios.post(endpoint, inputs)
-            console.log(res)
             dispatch(setCurrentRoom(res.data))
             dispatch(updateRoom(res.data))
             enqueueSnackbar("an user successfully added!", { variant: "success" })

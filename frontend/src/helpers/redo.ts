@@ -12,8 +12,6 @@ export default async function redo(state:RootState, dispatch:AppDispatch) {
     const session = state.users.session
     const axios = getAxios(session)
     const change = history.at(historyStep + 1)
-    console.log(historyStep)
-    console.log({change})
     let res;
 
     try {

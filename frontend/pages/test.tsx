@@ -12,15 +12,12 @@ const Test: NextPage = () => {
     const clientRef = useRef<typeof SockJsClient>()
 
     const onMessageReceived = (msg:any) => {
-        console.log("you've received a new message")
-        console.log(msg)
         setMessage(msg.message);
       }
 
     const onSubmit = (e:SubmitEvent) => {
         e.preventDefault();
         const value = e.target[0].value
-        console.log(clientRef)
         clientRef.current.sendMessage("/app/hello",JSON.stringify({message:value}))
 
     }

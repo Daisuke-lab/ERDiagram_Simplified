@@ -46,8 +46,6 @@ interface Props {
 
 const Room: NextPage = (props) => {
   const SOCKET_URL = `${process.env.NEXT_PUBLIC_CLIENT_API_URL}/ws-message`;
-  console.log(`SOCKET_URL:${SOCKET_URL}`)
-  console.log(`CLIENT_API_URL:${process.env.NEXT_PUBLIC_CLIENT_API_URL}`)
   const {erDiagrams, connections, currentRoom, simpleTexts} = props as Props
   const state = useAppSelector(state => state)
   const [errorText, setErrorText] = useState<string>("")
@@ -90,7 +88,6 @@ const Room: NextPage = (props) => {
 
 
   useEffect(() => {
-    console.log(SOCKET_URL)
     dispatch(setCurrentRoom(currentRoom))
     dispatch(setErDiagrams(erDiagrams))
     dispatch(setConnections(connections))
@@ -100,8 +97,6 @@ const Room: NextPage = (props) => {
   
 
     const onMessageReceived = (msg:MessageType<any>) => {
-        console.log("you've received a new message")
-        console.log(msg)
         const change =  {
           shapeName: msg.dataType,
           method: msg.method,

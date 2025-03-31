@@ -47,9 +47,9 @@ function SimpleTextHtmlText(props:Props) {
     const onKeyDown = async (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
         console.log(e)
         const keyCode = e.keyCode;
-
+        
+        //Press Entered
         if (keyCode === 13) {
-            //console.log("you entered")
             saveTextarea(state, dispatch, textRef.current?.getStage())
 
         }
