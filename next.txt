@@ -1,2 +1,7 @@
-github action => update kubernetes deployment tag
 CodeDeploy?
+ArgoCD => You want to use it so let's use it => how about memory?
+SpotInstance*CloudFormation
+👇
+doesn't matter. Do whatever you want to study
+- ArgoCD
+- CloudFormation
