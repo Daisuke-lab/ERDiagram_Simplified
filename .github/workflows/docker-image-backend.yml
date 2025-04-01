@@ -56,7 +56,7 @@ jobs:
       #   "output_3": "3"
       # }
       run: |
-          sed -i "s|@sha256:[a-fA-F0-9]*|@${{ needs.build.outputs.digest }}|g" backend/backend_deployment.yaml
+          sed -i "s|@sha256:[a-fA-F0-9]*|@${{ needs.build.outputs.digest }}|g" kubernetes/backend_deployment.yaml
 
     - name: Commit and push changes
       run: |
