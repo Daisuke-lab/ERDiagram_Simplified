@@ -1,7 +1,6 @@
 # Set up Development Environment
 
 ## Backend
-1
 ### 1. Create an image
 ```
 docker build . -f backend/Dockerfile.dev -t backend
