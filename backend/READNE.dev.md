@@ -1,5 +1,5 @@
 # Set up Development Environment
-1
+
 ## Backend
 
 ### 1. Create an image

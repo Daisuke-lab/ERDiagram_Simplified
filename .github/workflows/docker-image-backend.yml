@@ -15,6 +15,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ steps.build_and_push.outputs.digest }}
 
     steps:
     
@@ -30,6 +32,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and push
+      id: build_and_push
       uses: docker/build-push-action@v4
       with:
         context: backend/
