@@ -20,7 +20,7 @@ spec:
             name: er-frontend-config
       containers:
         - name: er-backend-pod
-          image: daisukezr/erdiagram-simplified-frontend:latest@sha256:967b4109313f2631b3639f280e55aec7ec7dfb99a53be50c477dafc8cd78f7e9
+          image: daisukezr/erdiagram-simplified-frontend:latest@sha256:b75e050730d6d3e3c9a0362f5255cd1ae3d94c7082ccaa5b002a0b3a624c23ea
           volumeMounts:
             - name: env-local
               mountPath: /root/workspace/.env.local
