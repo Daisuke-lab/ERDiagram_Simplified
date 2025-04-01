@@ -76,6 +76,7 @@ kubectl apply -f traefik_ingress_route_tls.yaml
 
 ## 4. DNS
 - https://navi.onamae.com/domain/setting/dsrecord/select
+<br>
 ネームサーバー/DNS>ドメインDNS設定>DNSレコード設定を利用する
 
 ## 5. Create PV/PVC for TLS
