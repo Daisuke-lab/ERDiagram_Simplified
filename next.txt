@@ -5,3 +5,25 @@ SpotInstance*CloudFormation
 doesn't matter. Do whatever you want to study
 - ArgoCD
 - CloudFormation
+
+Once you recreated serviceit works
+- attach elastic ip
+- set threshold (check on-demand price)
+- integrate it with system manager
+
+1. EventBridge
+2. Lambda (change desired capacity) <= sam
+3. new instance will be created
+4. git clone by user data(includes your bash) 
+5. execute main bash by user data
+5.1 copy configmap from s3 (bash in git)
+5.2 apply templates (bash in git)
+5.3 update traefik controller
+5.4 attach elastic ip
+
+
+- set desired capacity
+https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling/client/set_desired_capacity.html
+
+
+* you want to do as much as possible

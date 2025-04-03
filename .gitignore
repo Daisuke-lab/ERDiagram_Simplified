@@ -1,3 +1,7 @@
+########## AWS ##########
+venv/
+.aws-sam/
+
 ########## BACKEND ##########
 HELP.md
 target/
