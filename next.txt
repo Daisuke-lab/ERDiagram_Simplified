@@ -25,5 +25,6 @@ Once you recreated serviceit works
 - set desired capacity
 https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling/client/set_desired_capacity.html
 
+- attach right iam role to Lambda
 
 * you want to do as much as possible

@@ -1,6 +1,7 @@
 ########## AWS ##########
 venv/
-.aws-sam/
+*.zip
+python/
 
 ########## BACKEND ##########
 HELP.md
