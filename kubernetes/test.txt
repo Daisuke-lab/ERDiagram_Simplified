@@ -1,3 +1,0 @@
-- --certificatesresolvers.myresolver.acme.tlschallenge
-- --certificatesresolvers.myresolver.acme.email=kikuchidaisuke.zr@gmail.com
-- --certificatesresolvers.myresolver.acme.storage=/data/acme.json

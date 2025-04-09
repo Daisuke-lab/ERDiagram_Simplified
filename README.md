@@ -16,7 +16,7 @@ https://erdiagram-simplified.daisukekikuchi.net/
 
 ## Overview
 This website allows you to make your own ER Diagram, which represent Database Structure.<br>
-This's real time async editor of diagrams, so you can edit it with your friends at the same time
+This is ***real time async editor of diagrams***, so you can edit it with your friends at the same time
 without reloading your browser!
 
 ### Amazing Features!!
