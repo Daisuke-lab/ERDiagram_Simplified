@@ -4,6 +4,7 @@
 export INSTALL_K3S_VERSION="v1.32.3+k3s1"
 curl -sfL https://get.k3s.io | sh -
 echo 'alias kubectl="sudo k3s kubectl"' >> $HOME/.bashrc
+echo 'alias k="sudo k3s kubectl"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
 
