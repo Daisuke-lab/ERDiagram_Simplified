@@ -7,6 +7,11 @@ echo 'alias kubectl="sudo k3s kubectl"' >> $HOME/.bashrc
 echo 'alias k="sudo k3s kubectl"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
+# check command
+if ! command -v kubectl &> /dev/null; then
+    echo "kubectl is not installed. Please install it before continuing." >> error.log
+    exit 1
+fi
 
 ## Pull config files
 aws s3 cp s3://er-diagram-config/application.properties .
