@@ -1,17 +1,21 @@
 #! /bin/bash
 
 ## Install K3s
+cd /home/ec2-user
 export INSTALL_K3S_VERSION="v1.32.3+k3s1"
 curl -sfL https://get.k3s.io | sh -
 echo 'alias kubectl="sudo k3s kubectl"' >> $HOME/.bashrc
 echo 'alias k="sudo k3s kubectl"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
+
+echo $HOME >> error.log
 # check command
 if ! command -v kubectl &> /dev/null; then
     echo "kubectl is not installed. Please install it before continuing." >> error.log
     exit 1
 fi
+# can be sudo is not availble
 
 ## Pull config files
 aws s3 cp s3://er-diagram-config/application.properties .
