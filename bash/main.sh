@@ -25,6 +25,12 @@ aws s3 cp s3://er-diagram-config/.env.local .
 kubectl create configmap er-backend-config --from-file=application.properties
 kubectl create configmap er-frontend-config --from-file=.env.local
 
+## Create PV dirs
+sudo mkdir -p /mnt/pv/er-tls
+sudo chown -R 1000:1000 /mnt/pv/er-tls
+sudo chmod -R 750 /mnt/pv/er-tls
+
+
 ## Apply templates
 export KS_DIR="$EC2_USER_HOME/ERDiagram_Simplified/kubernetes"
 kubectl apply -f $KS_DIR --force

@@ -1,1 +1,3 @@
-# main.sh live check
+you need to wait updating traefik_deployment until it is deployed
+integrate chat gpt
+create everything by terraform
