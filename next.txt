@@ -1,3 +1,13 @@
 you need to wait updating traefik_deployment until it is deployed
 integrate chat gpt
 create everything by terraform
+
+
+## you have to wait ingressroute CRD created and then
+1. create ingressroute
+2. update deployment
+
+[ec2-user@ip-172-31-7-89 ~]$ k get ingressroute
+error: the server doesn't have a resource type "ingressroute"
+[ec2-user@ip-172-31-7-89 ~]$ k get ingressroute
+No resources found in default namespace.
