@@ -2,6 +2,7 @@
 
 ## Install K3s
 EC2_USER_HOME="/home/ec2-user"
+export KS_DIR="$EC2_USER_HOME/ERDiagram_Simplified/kubernetes"
 cd $EC2_USER_HOME
 export INSTALL_K3S_VERSION="v1.32.3+k3s1"
 curl -sfL https://get.k3s.io | sh -
@@ -32,7 +33,6 @@ sudo chmod -R 750 /mnt/pv/er-tls
 
 
 ## Apply templates
-export KS_DIR="$EC2_USER_HOME/ERDiagram_Simplified/kubernetes"
 kubectl apply -f $KS_DIR/resources --force
 
 
@@ -45,8 +45,8 @@ aws ec2 associate-address --instance-id $INSTANCE_ID --allocation-id $ELASTIC_IP
 while true; do
     kubectl get ingressroute
     status=$?
-    if [ $status -eq 0 ] then
-        echo "IngressRoute '$RESOURCE_NAME' is available!"
+    if [ $status -eq 0 ]; then
+        echo "IngressRoute is available!"
             break
     fi
     echo "Still waiting for IngressRoute..."
