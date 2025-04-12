@@ -53,4 +53,7 @@ while true; do
     sleep 3
 done
 
-kubectl apply -f $KS_DIR/traefik --force
+kubectl apply -f $KS_DIR/traefik/traefik_ingress_route_tls.yaml
+kubectl apply -f $KS_DIR/traefik/traefik_ingress_route.yaml
+# This has to be executed at last
+kubectl apply -f $KS_DIR/traefik/traefik_deployment.yaml --force
