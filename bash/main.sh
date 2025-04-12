@@ -33,10 +33,24 @@ sudo chmod -R 750 /mnt/pv/er-tls
 
 ## Apply templates
 export KS_DIR="$EC2_USER_HOME/ERDiagram_Simplified/kubernetes"
-kubectl apply -f $KS_DIR --force
+kubectl apply -f $KS_DIR/resources --force
 
 
 ## Allocate IP
 INSTANCE_ID=$(ec2-metadata -i | awk '{print $2}')
 ELASTIC_IP_ALLOCATION_ID=$(aws ec2 describe-addresses --query "Addresses[*].AllocationId" --output text)
 aws ec2 associate-address --instance-id $INSTANCE_ID --allocation-id $ELASTIC_IP_ALLOCATION_ID --allow-reassociation
+
+
+while true; do
+    kubectl get ingressroute
+    status=$?
+    if [ $status -eq 0 ] then
+        echo "IngressRoute '$RESOURCE_NAME' is available!"
+            break
+    fi
+    echo "Still waiting for IngressRoute..."
+    sleep 3
+done
+
+kubectl apply -f $KS_DIR/traefik --force
