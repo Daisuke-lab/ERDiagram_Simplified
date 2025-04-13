@@ -1,14 +1,7 @@
-you need to wait updating traefik_deployment until it is deployed
-integrate chat gpt
-create everything by terraform
-change shell to ansible
+1. integrate chat gpt
+2. create everything by terraform
+3. change shell to ansible
 
-
-## you have to wait ingressroute CRD created and then
-1. create ingressroute
-2. update deployment
-
-[ec2-user@ip-172-31-7-89 ~]$ k get ingressroute
-error: the server doesn't have a resource type "ingressroute"
-[ec2-user@ip-172-31-7-89 ~]$ k get ingressroute
-No resources found in default namespace.
+1. integrate chat gpt
+- set up chat gpt api first
+- integrate it to spring boot / next
