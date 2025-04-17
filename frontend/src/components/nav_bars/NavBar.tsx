@@ -18,11 +18,14 @@ import { CAN_EDIT, OWNER } from '../../constant';
 import { IconButton, Tooltip } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { useRouter } from 'next/router';
+import chatGptIcon from "../../../public/chatgpt.png"
+import Image from 'next/image'
+import AskAIForm from '../AskAIForm';
 
 
 function NavBar() {
 
-  
+  const ChatGPTIcon = () => (<Image src={chatGptIcon} width={20} height={20} alt="chatgpt" />)
   const currentRoom = useAppSelector(state => state.commons.currentRoom)
   const currentPermission = useAppSelector(state => state.commons.currentPermission)
   const canEdit = [CAN_EDIT, OWNER].includes(currentPermission)
@@ -30,6 +33,7 @@ function NavBar() {
   const { data: session } = useSession()
   const axios = getAxios(session as unknown as CustomSessionType | null)
   const [shareOpen, setShareOpen] = useState<boolean>(false) 
+  const [aiOpen, setAiOpen] = useState<boolean>(false)
   const router = useRouter()
 
   //useEffectでわざわざやってやらないとundefinedになってしまう。
@@ -85,18 +89,6 @@ function NavBar() {
           <File/>
       </Nav.Item>
       <Nav.Item className={styles.navOption}>
-          Edit
-      </Nav.Item>
-      <Nav.Item className={styles.navOption}>
-          Select
-      </Nav.Item>
-      <Nav.Item className={styles.navOption}>
-          View
-      </Nav.Item>
-      <Nav.Item className={styles.navOption}>
-          Insert
-      </Nav.Item>
-      <Nav.Item className={styles.navOption}>
           <Button className={styles.navButton} onClick={() => setShareOpen(true)}>
             Share
           </Button>
@@ -108,10 +100,16 @@ function NavBar() {
         </Button>
           </Tooltip>
       </Nav.Item>
+      <Nav.Item className={styles.navOption}>
+        <Button className={styles.navButton} endIcon={<ChatGPTIcon/>} onClick={() => setAiOpen(!aiOpen)}>
+          Ask AI
+        </Button>
+      </Nav.Item>
     </Container>
     <EditingNavBar/>
   </Navbar>
   {shareOpen?(<ShareForm open={shareOpen} setOpen={setShareOpen} />):(<></>)}
+  {aiOpen?(<AskAIForm open={aiOpen} setOpen={setAiOpen} />):(<></>)}
 </>
   )
 }
