@@ -2,6 +2,7 @@
 2. create everything by terraform
 3. change shell to ansible
 
+try upgrade and run it locally
 1. integrate chat gpt
 - set up chat gpt api first
 - integrate it to spring boot / next
