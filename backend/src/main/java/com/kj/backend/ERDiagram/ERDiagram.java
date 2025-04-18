@@ -29,11 +29,7 @@ public class ERDiagram {
     private Float y;
     private HashMap<String, Float> scale;
     private Float rotation;
-
-    //@OneToMany(mappedBy="row", fetch = FetchType.EAGER,cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Set<Row> rows;
-
-    //many to one room
     private String roomId;
     private String updatedBy;
 

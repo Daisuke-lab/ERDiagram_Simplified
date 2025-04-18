@@ -149,6 +149,10 @@ public class RoomService {
         return roomRepository.save(room);
     }
 
+    public void askAI(String id, AIPrompt aiPrompt) {
+
+    }
+
     public Room addUserToRoom(String id, RoomUser roomUser) {
         Room room = roomRepository.findById(id).orElse(null);
         String email = roomUser.getEmail();

@@ -55,6 +55,9 @@ public class RoomController {
     @PostMapping(path="add_user/{id}")
     public Room addUserToRoom(@PathVariable String id, @RequestBody RoomUser roomUser) {return roomService.addUserToRoom(id, roomUser);}
 
+    @PostMapping(path="ask_ai/{id}")
+    public Room addUserToRoom(@PathVariable String id, @RequestBody AIPrompt aiPrompt) {return roomService.askAI(id, aiPrompt);}
+
     @DeleteMapping(path="{id}")
     public void deleteRoom(@PathVariable String id) {
         roomService.deleteRoom(id);

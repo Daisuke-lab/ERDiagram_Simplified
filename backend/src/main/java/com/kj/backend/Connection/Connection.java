@@ -20,12 +20,10 @@ import java.time.Period;
 @Table
 @Document(collection = "connection")
 public class Connection {
-
     @Id
     private String id;
     private ConnectionPoint source;
     private ConnectionPoint destination;
-
     private String roomId;
     private String updatedBy;
 
