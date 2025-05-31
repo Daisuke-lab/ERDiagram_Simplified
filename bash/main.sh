@@ -30,7 +30,8 @@ kubectl create configmap er-frontend-config --from-file=.env.local
 sudo mkdir -p /mnt/pv/er-tls
 sudo chown -R 1000:1000 /mnt/pv/er-tls
 sudo chmod -R 750 /mnt/pv/er-tls
-
+kubectl apply -f $KS_DIR/traefik/traefik_tls_pv.yaml
+kubectl apply -f $KS_DIR/traefik/traefik_tls_pvc.yaml
 
 ## Apply templates
 kubectl apply -f $KS_DIR/resources --force
