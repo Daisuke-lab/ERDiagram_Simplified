@@ -32,6 +32,7 @@ sudo chown -R 1000:1000 /mnt/pv/er-tls
 sudo chmod -R 750 /mnt/pv/er-tls
 kubectl apply -f $KS_DIR/traefik/traefik_tls_pv.yaml
 kubectl apply -f $KS_DIR/traefik/traefik_tls_pvc.yaml
+aws s3 cp s3://er-diagram-config/acme.json /mnt/pv/er-tls/acme.json
 
 ## Apply templates
 kubectl apply -f $KS_DIR/resources --force
