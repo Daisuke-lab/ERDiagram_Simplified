@@ -124,8 +124,6 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: data
-        - mountPath: /tmp
-          name: tmp
       dnsPolicy: ClusterFirst
       priorityClassName: system-cluster-critical
       restartPolicy: Always
@@ -147,10 +145,9 @@ spec:
         key: node-role.kubernetes.io/master
         operator: Exists
       volumes:
-      - emptyDir: {}
-        name: data
-      - emptyDir: {}
-        name: tmp
+      - name: data
+        persistentVolumeClaim:
+          claimName: er-tls-pvc
 status:
   availableReplicas: 1
   conditions:
