@@ -20,7 +20,7 @@ spec:
             name: er-backend-config
       containers:
         - name: er-backend-pod
-          image: daisukezr/erdiagram-simplified-backend:latest@sha256:15bf4a6554b13a7b379567f47e40683e14e0f7bd4cd4317ce3a23e1a20fa330c
+          image: daisukezr/erdiagram-simplified-backend:latest@sha256:7d6bb41425c618c2dde2fa58facb1277d368749a4de13b81fbf4508b9c1c73dc
           volumeMounts:
             - name: application-properties
               mountPath: /root/deployment/config/
