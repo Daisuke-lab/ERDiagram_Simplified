@@ -42,7 +42,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: https://sonarcloud.io
           SONAR_ORGANIZATION: daisuke-lab
-        run: cd backend && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: cd backend && mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=daisuke-lab
 
 
   build:
