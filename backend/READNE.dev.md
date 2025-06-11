@@ -19,7 +19,7 @@ docker run -it -v ${PWD}:/root/workspace/ -v ${PWD}\.m2:/root/.m2/ -p 8080:8080 
 spring.datasource.url=XXXXXXXXXXXx
 ```
 
-### 3.start appliction
+### 3. start appliction
 ```
 root/workspace> mvn spring-boot:run
 ```
